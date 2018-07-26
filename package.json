@@ -1,0 +1,14 @@
+
+{
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "name": "twitchcheat",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^1.17.5",
+    "twitch-bot": "^1.2.5"
+  }
+}
