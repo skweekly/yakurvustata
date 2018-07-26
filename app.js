@@ -7,7 +7,7 @@ if(pillSteal % 2 !== 0){
 
 const Bot = new TwitchBot({
     username : 'berdygaming',
-    oauth    : 'oauth:r97suc9ce2xz75lygkuy31g21g59z4',
+    oauth    : 'oauth:9chop2wdusouwz4webw2vg6uv3nl0z',
     channels  : ['mushytales']
   })
   console.log(Bot)
