@@ -1,10 +1,6 @@
 const TwitchBot = require('twitch-bot')
 let pillSteal = 7802
 
-if(pillSteal % 2 !== 0){
-  Math.floor(pillSteal)
-}
-
 const Bot = new TwitchBot({
     username : 'berdygaming',
     oauth    : 'oauth:9chop2wdusouwz4webw2vg6uv3nl0z',
@@ -36,7 +32,7 @@ Bot.on("message", chatter => {
 Bot.on("message", chatter => {
   if(chatter.message.includes("The coast is clear. Someone can try to !steal (amount).")){
     setTimeout(function(){
-      Bot.say("!steal " + pillSteal)
+      Bot.say("!steal " + Math.floor(pillSteal))
       console.log("You participated in a !steal")
     }, 12000
    )
