@@ -1,5 +1,7 @@
 const TwitchBot = require('twitch-bot')
-let pillSteal = 7802
+let pillNum = 77522
+let pillSteal = Math.floor(pillNum)
+let currentPills
 
 const Bot = new TwitchBot({
     username : 'berdygaming',
@@ -61,7 +63,7 @@ Bot.on("message", chatter => {
 
 Bot.on("message", chatter => {
   if(chatter.message.includes("Here's what happened...") && !chatter.message.includes("berdygaming")){
-      pillSteal = pillSteal - (pillSteal / 2)
+      pillSteal = Math.floor(pillSteal - (pillSteal / 2))
       console.log("You lost the !steal")
   }
 })
@@ -69,6 +71,7 @@ Bot.on("message", chatter => {
 Bot.on("message", chatter => {
   if(chatter.message.includes(" It's over. There are pills everywhere.") && chatter.message.includes("berdygaming")){
       console.log("You won the !runaway")
+    
   }
 })
 
@@ -77,3 +80,9 @@ Bot.on("message", chatter => {
       console.log("You lost the !runaway")
   }
 })
+
+/* Bot.on("message", chatter => {
+    if(chatter.message.includes("Top pill hoarders - Naughty inmates..." && chatter.message.includes("berdygaming ("){
+        currentPills = str.substring(str.indexOf("berdygaming (") + 1);
+        console.log("You are in the Top 10. You have " + currentPills)
+*/
