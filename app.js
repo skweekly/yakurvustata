@@ -8,10 +8,10 @@ const Bot = new TwitchBot({
     oauth    : 'oauth:9chop2wdusouwz4webw2vg6uv3nl0z',
     channels  : ['mushytales']
   })
-  console.log(Bot)
+  //console.log(Bot)
 
 Bot.on("join", channel => {
-  console.log(`Joined channel: ${channels}$`)
+  console.log(`Joined channel(s): ${Bot.channels}$`)
   }
 )
 
