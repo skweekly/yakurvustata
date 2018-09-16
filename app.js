@@ -11,7 +11,7 @@ const Bot = new TwitchBot({
   console.log(Bot)
 
 Bot.on("join", channel => {
-  console.log(`Joined channel: ${channel}$`)
+  console.log(`Joined channel: ${channels}$`)
   }
 )
 
@@ -23,7 +23,7 @@ Bot.on("message", chatter => {
   if(chatter.message.includes("Everyone that escaped has been caught and returned to The Asylum...Let's hope no-one tries to !runaway again.")){
     setTimeout(function(){
       Bot.say("!runaway")
-      console.log("You participated in a !runaway")
+      console.log("You participated in a !runaway at " +  new Date().toLocaleString())
     }, 12000
    )
 
@@ -35,7 +35,7 @@ Bot.on("message", chatter => {
   if(chatter.message.includes("The coast is clear. Someone can try to !steal (amount).")){
     setTimeout(function(){
       Bot.say("!steal " + Math.floor(pillSteal))
-      console.log("You participated in a !steal")
+      console.log("You participated in a !steal at " +  new Date().toLocaleString())
     }, 12000
    )
 
@@ -57,27 +57,27 @@ Bot.on("message", chatter => {
 Bot.on("message", chatter => {
   if(chatter.message.includes("Here's what happened...") && chatter.message.includes("berdygaming")) {
     pillSteal = pillSteal + (pillSteal / 2)
-    console.log("You won the !steal")
+    console.log("You won the !steal at " + new Date().toLocaleString())
   }
   })
 
 Bot.on("message", chatter => {
   if(chatter.message.includes("Here's what happened...") && !chatter.message.includes("berdygaming")){
       pillSteal = Math.floor(pillSteal - (pillSteal / 2))
-      console.log("You lost the !steal")
+      console.log("You lost the !steal at " + new Date().toLocaleString())
   }
 })
 
 Bot.on("message", chatter => {
   if(chatter.message.includes(" It's over. There are pills everywhere.") && chatter.message.includes("berdygaming")){
-      console.log("You won the !runaway")
+      console.log("You won the !runaway at " + new Date().toLocaleString())
     
   }
 })
 
 Bot.on("message", chatter => {
   if(chatter.message.includes(" It's over. There are pills everywhere.") && !chatter.message.includes("berdygaming")){
-      console.log("You lost the !runaway")
+      console.log("You lost the !runaway at " + new Date().toLocaleString())
   }
 })
 
@@ -86,3 +86,8 @@ Bot.on("message", chatter => {
         currentPills = str.substring(str.indexOf("berdygaming (") + 1);
         console.log("You are in the Top 10. You have " + currentPills)
 */
+    Bot.on("message, chatter => {
+        if(chatter.message.includes("Sad and alone, berdygaming never stood a chance"){
+        console.log("You lost the !runaway at " + new Date().toLocaleString())   
+           }
+})  
