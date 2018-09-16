@@ -31,8 +31,8 @@ Bot.on("message", chatter => {
     setTimeout(function(){
       Bot.say("!runaway")
       console.log("You participated in a !runaway with " + pillSteal + " at " +  new Date().toLocaleString())
-        statistcs.joins++
-        let data = JSON.stringify(statistcs.joins, null, 2);
+        statistics.joins++
+        let data = JSON.stringify(statistics.joins, null, 2);
         fs.writeFileSync('stats.json', data); 
     }, 12000
    )
@@ -46,8 +46,8 @@ Bot.on("message", chatter => {
     setTimeout(function(){
       Bot.say("!steal " + Math.floor(pillSteal))
       console.log("You participated in a !steal with " + pillSteal + " at " +  new Date().toLocaleString())
-          statistcs.joins++
-        let data = JSON.stringify(statistcs.joins, null, 2);
+          statistics.joins++
+        let data = JSON.stringify(statistics.joins, null, 2);
         fs.writeFileSync('stats.json', data); 
     }, 12000
    )
@@ -71,8 +71,8 @@ Bot.on("message", chatter => {
   if(chatter.message.includes("Here's what happened...") && chatter.message.includes("berdygaming")) {
     pillSteal = pillSteal + (pillSteal / 2)
     console.log("You won the !steal with " + pillSteal + " at " +  new Date().toLocaleString())
-        statistcs.wins++
-        let data = JSON.stringify(statistcs.wins, null, 2);
+        statistics.wins++
+        let data = JSON.stringify(statistics.wins, null, 2);
         fs.writeFileSync('stats.json', data); 
   }
   })
@@ -81,8 +81,8 @@ Bot.on("message", chatter => {
   if(chatter.message.includes("Here's what happened...") && !chatter.message.includes("berdygaming")){
       pillSteal = Math.floor(pillSteal - (pillSteal / 2))
       console.log("You lost the !steal with " + pillSteal + " at " +  new Date().toLocaleString())
-       statistcs.losses++
-        let data = JSON.stringify(statistcs.losses, null, 2);
+       statistics.losses++
+        let data = JSON.stringify(statistics.losses, null, 2);
         fs.writeFileSync('stats.json', data); 
   }
 })
@@ -90,8 +90,8 @@ Bot.on("message", chatter => {
 Bot.on("message", chatter => {
   if(chatter.message.includes(" It's over. There are pills everywhere.") && chatter.message.includes("berdygaming")){
       console.log("You won the !runaway with " + pillSteal + " at " +  new Date().toLocaleString())
-     statistcs.wins++
-        let data = JSON.stringify(statistcs.joins, null, 2);
+     statistics.wins++
+        let data = JSON.stringify(statistics.joins, null, 2);
         fs.writeFileSync('stats.json', data); 
   }
 })
@@ -99,8 +99,8 @@ Bot.on("message", chatter => {
 Bot.on("message", chatter => {
   if(chatter.message.includes(" It's over. There are pills everywhere.") && !chatter.message.includes("berdygaming")){
       console.log("You lost the !runaway with " + pillSteal + " at " +  new Date().toLocaleString())
-       statistcs.losses++
-        let data = JSON.stringify(statistcs.losses, null, 2);
+       statistics.losses++
+        let data = JSON.stringify(statistics.losses, null, 2);
         fs.writeFileSync('stats.json', data); 
   }
 })
@@ -114,8 +114,8 @@ Bot.on("message", chatter => {
 Bot.on("message", chatter => {
      if(chatter.message.includes("Sad and alone, berdygaming never stood a chance")){
         console.log("You lost the !runaway with " + pillSteal + " at " +  new Date().toLocaleString()) 
-          statistcs.losses++
-        let data = JSON.stringify(statistcs.losses, null, 2);
+          statistics.losses++
+        let data = JSON.stringify(statistics.losses, null, 2);
         fs.writeFileSync('stats.json', data); 
   }
 })
