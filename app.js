@@ -81,13 +81,17 @@ Bot.on("message", chatter => {
   }
 })
 
+ if(chatter.message.includes("Sad and alone, berdygaming never stood a chance"){
+        console.log("You lost the !runaway at " + new Date().toLocaleString()) 
+ 
 /* Bot.on("message", chatter => {
     if(chatter.message.includes("Top pill hoarders - Naughty inmates..." && chatter.message.includes("berdygaming ("){
         currentPills = str.substring(str.indexOf("berdygaming (") + 1);
         console.log("You are in the Top 10. You have " + currentPills)
 */
-    Bot.on("message, chatter => {
-        if(chatter.message.includes("Sad and alone, berdygaming never stood a chance"){
-        console.log("You lost the !runaway at " + new Date().toLocaleString())   
-           }
-})  
+
+Bot.on("message", chatter => {
+     if(chatter.message.includes("Sad and alone, berdygaming never stood a chance"){
+        console.log("You lost the !runaway at " + new Date().toLocaleString()) 
+  }
+})
