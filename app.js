@@ -91,7 +91,7 @@ Bot.on("message", chatter => {
 */
 
 Bot.on("message", chatter => {
-     if(chatter.message.includes("Sad and alone, berdygaming never stood a chance"){
+     if(chatter.message.includes("Sad and alone, berdygaming never stood a chance")){
         console.log("You lost the !runaway at " + new Date().toLocaleString()) 
   }
 })
