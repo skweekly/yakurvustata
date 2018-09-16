@@ -5,9 +5,9 @@ let pillNum = 77522
 let pillSteal = Math.floor(pillNum)
 let currentPills
 let statistics = {
-    wins: 0
-    losses: 0
-    joins: 0
+    wins: 0,
+    losses: 0,
+    joins: 0FF
 };
     
 const Bot = new TwitchBot({
