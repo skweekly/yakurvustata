@@ -7,7 +7,7 @@ let currentPills
 let statistics = {
     wins: 0,
     losses: 0,
-    joins: 0FF
+    joins: 0
 };
     
 const Bot = new TwitchBot({
