@@ -1,7 +1,7 @@
 //declaring shit needed for later
 const TwitchBot = require('twitch-bot')
 const fs = require('fs')
-let pillNum = 77522
+let pillNum = 15639
 let pillSteal = Math.floor(pillNum)
 let currentPills
 let statistics = {
@@ -71,6 +71,7 @@ Bot.on("message", chatter => {
   if(chatter.message.includes("Here's what happened...") && chatter.message.includes("berdygaming")) {
     pillSteal = pillSteal + (pillSteal / 2)
     console.log("You won the !steal with " + pillSteal + " at " +  new Date().toLocaleString())
+      https://github.com/skweekly/yakurvustata/edit/master/app.js
        //statistics.wins++
         //let data = JSON.stringify(statistics.wins, null, 2);
         //fs.writeFileSync('stats.json', data); 
@@ -90,6 +91,7 @@ Bot.on("message", chatter => {
 Bot.on("message", chatter => {
   if(chatter.message.includes(" It's over. There are pills everywhere.") && chatter.message.includes("berdygaming")){
       console.log("You won the !runaway with " + pillSteal + " at " +  new Date().toLocaleString())
+       pillSteal = Math.floor(pillSteal + (pillSteal / 2))
    //  statistics.wins++
      //   let data = JSON.stringify(statistics.joins, null, 2);
        // fs.writeFileSync('stats.json', data); 
@@ -99,6 +101,7 @@ Bot.on("message", chatter => {
 Bot.on("message", chatter => {
   if(chatter.message.includes(" It's over. There are pills everywhere.") && !chatter.message.includes("berdygaming")){
       console.log("You lost the !runaway with " + pillSteal + " at " +  new Date().toLocaleString())
+       pillSteal = Math.floor(pillSteal - (pillSteal / 2))
    //    statistics.losses++
      //   let data = JSON.stringify(statistics.losses, null, 2);
        // fs.writeFileSync('stats.json', data); 
@@ -114,6 +117,7 @@ Bot.on("message", chatter => {
 Bot.on("message", chatter => {
      if(chatter.message.includes("Sad and alone, berdygaming never stood a chance")){
         console.log("You lost the !runaway with " + pillSteal + " at " +  new Date().toLocaleString()) 
+          pillSteal = Math.floor(pillSteal - (pillSteal / 2))
       //    statistics.losses++
       //  let data = JSON.stringify(statistics.losses, null, 2);
     //    fs.writeFileSync('stats.json', data); 
