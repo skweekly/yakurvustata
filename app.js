@@ -71,12 +71,12 @@ Bot.on("message", chatter => {
   if(chatter.message.includes("Here's what happened...") && chatter.message.includes("berdygaming")) {
     pillSteal = pillSteal + (pillSteal / 2)
     console.log("You won the !steal with " + pillSteal + " at " +  new Date().toLocaleString())
-      https://github.com/skweekly/yakurvustata/edit/master/app.js
+     // https://github.com/skweekly/yakurvustata/edit/master/app.js
        //statistics.wins++
         //let data = JSON.stringify(statistics.wins, null, 2);
         //fs.writeFileSync('stats.json', data); 
   }
-  })
+  });
 
 Bot.on("message", chatter => {
   if(chatter.message.includes("Here's what happened...") && !chatter.message.includes("berdygaming")){
